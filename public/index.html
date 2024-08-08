@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Travel Journal</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="mt-5 text-center">Virtual Travel Journal</h1>
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item">
+        <a class="nav-link active" id="addEntry-tab" data-toggle="tab" href="#addEntry" role="tab" aria-controls="addEntry" aria-selected="true">Add Entry</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="viewEntries-tab" data-toggle="tab" href="#viewEntries" role="tab" aria-controls="viewEntries" aria-selected="false">View Entries</a>
+      </li>
+    </ul>
+
+    <div class="tab-content" id="myTabContent">
+      <!-- Add Entry Tab -->
+      <div class="tab-pane fade show active" id="addEntry" role="tabpanel" aria-labelledby="addEntry-tab">
+        <div class="mb-4">
+          <h2>Add Travel Entry</h2>
+          <form id="entryForm" class="mb-4">
+            <div class="form-group">
+              <label for="entryTitle">Title</label>
+              <input type="text" id="entryTitle" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="entryLocation">Location</label>
+              <input type="text" id="entryLocation" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="entryDate">Date</label>
+              <input type="date" id="entryDate" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="entryDescription">Description</label>
+              <textarea id="entryDescription" class="form-control" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="entryPhotos">Photo URLs (comma-separated)</label>
+              <input type="text" id="entryPhotos" class="form-control">
+            </div>
+            <div class="form-group">
+              <label for="entryMapLocation">Map Location (latitude,longitude)</label>
+              <input type="text" id="entryMapLocation" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Add Entry</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- View Entries Tab -->
+      <div class="tab-pane fade" id="viewEntries" role="tabpanel" aria-labelledby="viewEntries-tab">
+        <div class="mb-4">
+          <h2>My Travel Entries</h2>
+          <ul id="entryList" class="list-group"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
